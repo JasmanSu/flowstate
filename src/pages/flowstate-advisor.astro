@@ -1235,6 +1235,164 @@ const differentiators = [
       .hero-h1 { font-size: 2.25rem; }
       .people-grid.team-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ─── HERO WORD-BY-WORD FLOAT-UP ─────────────────────────────────────
+       Each hero element is individually animated with a staggered delay.
+       Left side fires first, right side begins after left has settled.
+       `animation-fill-mode: both` keeps elements hidden before delay fires.
+    ──────────────────────────────────────────────────────────────────── */
+    @keyframes heroWordUp {
+      from {
+        opacity: 0;
+        transform: translateY(36px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* base class — all hero words share this */
+    .hw {
+      display: block; /* allow block-level stacking inside inline elements */
+      opacity: 0;
+      animation: heroWordUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* ── Left side ── */
+    .hw-1 { animation-delay: 0.15s; }   /* eyebrow label */
+    .hw-2 { animation-delay: 0.50s; }   /* "Flowstate" */
+    .hw-3 { animation-delay: 0.85s; }   /* "Advisors" (italic) */
+    .hw-4 { animation-delay: 1.25s; }   /* tagline */
+
+    /* ── Right side — starts after left has settled ── */
+    .hw-5 { animation-delay: 1.70s; }   /* description paragraph */
+    .hw-6 { animation-delay: 2.05s; }   /* Get In Touch button */
+    .hw-7 { animation-delay: 2.30s; }   /* Learn More button */
+
+    /* hero-eyebrow already has flex display — restore it after .hw overrides */
+    .hero-eyebrow.hw { display: inline-flex; }
+    /* buttons are inline-flex — restore */
+    .btn-primary.hw,
+    .btn-outline-light.hw { display: inline-flex; }
+
+    /* ─── SCROLL-TRIGGERED ENTRANCE ANIMATIONS ──────────────────────────
+       All animations use only transform / opacity / filter (GPU-accelerated).
+       Initial hidden states are applied via data-anim attribute.
+       `.is-visible` triggers the transition to the final visible state.
+       `will-change` is removed once the animation completes to free memory.
+    ──────────────────────────────────────────────────────────────────── */
+
+    /* ── Shared base transition ── */
+    [data-anim] {
+      transition-duration: 0.75s;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+      transition-property: opacity, transform, filter;
+      transition-delay: var(--anim-delay, 0s); /* set --anim-delay inline on any element */
+      will-change: opacity, transform, filter;
+    }
+
+    /* ── S1 · Fade-in + Slide-up ── */
+    [data-anim="fade-up"] {
+      opacity: 0;
+      transform: translateY(48px);
+    }
+    [data-anim="fade-up"].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── S2 · Slide-in from left ── */
+    [data-anim="slide-left"] {
+      opacity: 0;
+      transform: translateX(-72px);
+    }
+    [data-anim="slide-left"].is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── S3 · Slide-in from right ── */
+    [data-anim="slide-right"] {
+      opacity: 0;
+      transform: translateX(72px);
+    }
+    [data-anim="slide-right"].is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── S4 · Scale-up / Zoom-in ── */
+    [data-anim="scale-up"] {
+      opacity: 0;
+      transform: scale(0.88);
+    }
+    [data-anim="scale-up"].is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ── S5 · Blur-in to focus ── */
+    [data-anim="blur-in"] {
+      opacity: 0;
+      filter: blur(14px);
+      transform: scale(1.03);
+    }
+    [data-anim="blur-in"].is-visible {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1);
+    }
+
+    /* ── S6 · 3D Flip-in (rotateX) ── */
+    [data-anim="flip-in"] {
+      opacity: 0;
+      transform: perspective(900px) rotateX(22deg) translateY(40px);
+      transform-origin: top center;
+    }
+    [data-anim="flip-in"].is-visible {
+      opacity: 1;
+      transform: perspective(900px) rotateX(0deg) translateY(0);
+    }
+
+    /* ── S7 · Squeeze / Stretch reveal ── */
+    [data-anim="squeeze"] {
+      opacity: 0;
+      transform: scaleX(0.6) scaleY(1.2);
+      transform-origin: center center;
+    }
+    [data-anim="squeeze"].is-visible {
+      opacity: 1;
+      transform: scaleX(1) scaleY(1);
+    }
+
+    /* ── S8 · Staggered child fade-in (.pillar-card children) ── */
+    [data-anim="stagger"] > * {
+      opacity: 0;
+      transform: translateY(32px);
+      transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-anim="stagger"].is-visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 1.25s; }
+    [data-anim="stagger"].is-visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 1.75s; }
+    [data-anim="stagger"].is-visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 2.25s; }
+    [data-anim="stagger"].is-visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 1.0s; }
+    [data-anim="stagger"].is-visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 2.0s; }
+    [data-anim="stagger"].is-visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 2.5s; }
+
+    /* Respect prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      [data-anim],
+      [data-anim] > *,
+      .hw {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -1286,19 +1444,19 @@ const differentiators = [
 
       <div class="wrap hero-inner">
         <div class="hero-left">
-          <p class="hero-eyebrow">Corporate Advisory</p>
+          <p class="hero-eyebrow hw hw-1">Corporate Advisory</p>
           <h1 class="hero-h1">
-            Flowstate<br/>
-            <em>Advisors</em>
+            <span class="hw hw-2">Flowstate</span>
+            <em class="hw hw-3">Advisors</em>
           </h1>
-          <p class="hero-tagline">{firm.quote}</p>
+          <p class="hero-tagline hw hw-4">{firm.quote}</p>
         </div>
 
         <div class="hero-right">
-          <p class="hero-desc">{firm.description}</p>
+          <p class="hero-desc hw hw-5">{firm.description}</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn-primary">Get In Touch</a>
-            <a href="#about" class="btn-outline-light">Learn More</a>
+            <a href="#contact" class="btn-primary hw hw-6">Get In Touch</a>
+            <a href="#about" class="btn-outline-light hw hw-7">Learn More</a>
           </div>
         </div>
       </div>
@@ -1312,14 +1470,14 @@ const differentiators = [
     <!-- SECTION 2 — ABOUT (white) -->
     <section class="section section--white" id="about">
       <div class="wrap">
-        <div class="about-header">
+        <div class="about-header" data-anim="slide-left" style="--anim-delay: 0.5s;">
           <div>
             <h2 class="section-title mt-5">About <em>Flowstate</em></h2>
           </div>
           <p class="section-intro">{firm.description}</p>
         </div>
 
-        <div class="pillar-grid">
+        <div class="pillar-grid" data-anim="stagger" >
           {aboutPillars.map(p => (
             <div class="pillar-card">
               <div class="pillar-icon">
@@ -1336,12 +1494,15 @@ const differentiators = [
     <!-- SECTION 3 — PURPOSE (tint) -->
     <section class="section section--tint" id="purpose">
       <div class="wrap">
-        <span class="section-label">Our Purpose</span>
-        <h2 class="section-title">Advisory Built Around <em>Outcomes</em></h2>
 
+        <!-- Label and title float up individually -->
+        <span class="section-label" data-anim="fade-up" style="--anim-delay: 0s;">Our Purpose</span>
+        <h2 class="section-title" data-anim="fade-up" style="--anim-delay: 0.4s;">Advisory Built Around <em>Outcomes</em></h2>
+
+        <!-- Each row floats up in sequence after the title -->
         <div class="purpose-list">
           {purposeItems.map((item, i) => (
-            <div class="purpose-row">
+            <div class="purpose-row" data-anim="fade-up" style={`--anim-delay: ${1.0 + i * 0.5}s;`}>
               <div class="purpose-heading">
                 <span class="purpose-num">0{i + 1}</span>
                 <span class="purpose-title">{item.title}</span>
@@ -1364,27 +1525,28 @@ const differentiators = [
     <!-- SECTION 4 — TARGET (white) -->
     <section class="section section--white" id="target">
       <div class="wrap">
+
         <div class="target-header">
           <div>
-            <span class="target-eyebrow">04 · Clients & Sectors</span>
-            <h2 class="target-title">Who We Serve</h2>
+            <span class="target-eyebrow" data-anim="fade-up" style="--anim-delay: 0s;">04 · Clients &amp; Sectors</span>
+            <h2 class="target-title" data-anim="fade-up" style="--anim-delay: 0.4s;">Who We Serve</h2>
           </div>
-          <p class="target-blurb">
+          <p class="target-blurb" data-anim="fade-up" style="--anim-delay: 0.8s;">
             From founders and family businesses to governments and sovereign institutions,
             we advise across the full spectrum.
           </p>
         </div>
 
-        <div class="target-rule"></div>
+        <div class="target-rule" data-anim="fade-up" style="--anim-delay: 1.0s;"></div>
 
         <div class="target-columns">
-          {targetColumns.map(col => (
-            <div class="target-col">
+          {targetColumns.map((col, i) => (
+            <div class="target-col" data-anim="fade-up" style={`--anim-delay: ${1.2 + i * 0.4}s;`}>
               <span class="target-col-label">{col.label}</span>
               <p class="target-items">
-                {col.items.map((item, i) => (
+                {col.items.map((item, j) => (
                   <>
-                    {i > 0 && <span class="sep">·</span>}
+                    {j > 0 && <span class="sep">·</span>}
                     <span>{item}</span>
                   </>
                 ))}
@@ -1393,16 +1555,17 @@ const differentiators = [
           ))}
         </div>
 
-        <div class="target-footer">
+        <div class="target-footer" data-anim="fade-up" style="--anim-delay: 2.0s;">
           <span class="target-caption">A single adviser across the private-to-public spectrum</span>
           <span class="target-gradient-bar"></span>
         </div>
 
-        <h3 class="industries-title">Industries We Serve</h3>
+        <h3 class="industries-title" data-anim="fade-up" style="--anim-delay: 2.4s;">Industries We Serve</h3>
 
         <div class="industry-grid">
-          {industries.map(ind => (
-            <div class="industry-card" data-accent={ind.accent}>
+          {industries.map((ind, i) => (
+            <div class="industry-card" data-accent={ind.accent}
+                 data-anim="fade-up" style={`--anim-delay: ${2.8 + i * 0.4}s;`}>
               <img
                 src={ind.img}
                 alt={ind.title}
@@ -1425,7 +1588,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 5+6 — BOARD & TEAM gabungan (navy) -->
-    <section class="section section--navy" id="people">
+    <section class="section section--navy" id="people" data-anim="blur-in">
       <div class="wrap">
         <span class="section-label">Our People</span>
         <h2 class="section-title">Board & <em>Team</em></h2>
@@ -1483,7 +1646,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 7 — WHY US (tint) -->
-    <section class="section section--tint" id="why-us">
+    <section class="section section--tint" id="why-us" data-anim="flip-in">
       <div class="wrap">
         <div class="why-layout">
           <div class="why-left">
@@ -1515,7 +1678,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 8 — CONTACT (white) -->
-    <section class="section section--white" id="contact">
+    <section class="section section--white" id="contact" data-anim="squeeze">
       <div class="wrap">
         <span class="section-label">08 · Get In Touch</span>
         <h2 class="section-title" style="margin-bottom: 3rem;">
@@ -1635,6 +1798,55 @@ const differentiators = [
     const menu = document.getElementById('mobileNav');
     btn?.addEventListener('click', () => menu?.classList.toggle('open'));
     menu?.querySelectorAll('a').forEach(l => l.addEventListener('click', () => menu.classList.remove('open')));
+  </script>
+
+  <!-- ─── SCROLL-TRIGGERED ENTRANCE ANIMATIONS ──────────────────────── -->
+  <script>
+    (function () {
+      // Respect reduced-motion preference — if set, skip all JS work entirely
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      /**
+       * A single IntersectionObserver handles all animated elements.
+       * threshold: 0.2  → trigger when 20% of the element is in the viewport.
+       * rootMargin: 0px → no expansion of the intersection root.
+       *
+       * Once an element becomes visible we:
+       *   1. Add `.is-visible` to start the CSS transition.
+       *   2. Unobserve the element so it animates only once.
+       *   3. Remove `will-change` after the transition ends to free GPU memory.
+       */
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+            el.classList.add('is-visible');
+
+            // Free will-change after the longest possible transition (1s buffer)
+            el.addEventListener(
+              'transitionend',
+              () => { el.style.willChange = 'auto'; },
+              { once: true }
+            );
+
+            observer.unobserve(el);
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      // Observe every element that carries a data-anim attribute.
+      // This includes both section-level and child-container-level targets.
+      document.querySelectorAll('[data-anim]').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Note: the hero section (#hook) uses pure CSS keyframe animations
+      // with `animation-delay` for its word-by-word float-up effect.
+      // It does NOT use `data-anim` / IntersectionObserver — no JS needed there.
+    })();
   </script>
 
 </body>
