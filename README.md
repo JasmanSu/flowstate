@@ -1,4 +1,4 @@
-# Flowstaet
+# Flowstate
 
 A single-page corporate website built with [Astro](https://astro.build). Designed for professional services firms — fully static, fast, and easy to customise.
 
