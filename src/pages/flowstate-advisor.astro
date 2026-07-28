@@ -499,7 +499,7 @@ const differentiators = [
       overflow: hidden;
     }
 
-    /* KLCC background image */
+    /* KLCC background */
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -508,94 +508,75 @@ const differentiators = [
       background-position: center 30%;
     }
 
-    /* Dark overlay — supaya text readable */
+    /* Overlay for text contrast */
     .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(26,39,68,0.55) 0%,
-        rgba(26,39,68,0.4) 40%,
-        rgba(26,39,68,0.85) 100%
-      );
+      background: linear-gradient(to right, rgba(26,39,68,0.75) 0%, rgba(26,39,68,0.55) 50%, rgba(26,39,68,0.3) 100%);
     }
 
     .hero-inner {
       position: relative;
       z-index: 1;
       width: 100%;
-      padding-block: clamp(4rem, 8vw, 6rem);
+      padding-block: clamp(6rem, 10vw, 8rem);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
       align-items: center;
+      gap: 3rem;
+      max-width: 1200px;
     }
 
-    .hero-left {}
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: flex-start;
+      text-align: left;
+    }
 
     .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue-tint);
-      margin-bottom: 1.5rem;
-      opacity: 0.8;
+      display: none;
     }
     .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px; height: 1px;
-      background: var(--blue-tint);
-      opacity: 0.6;
+      display: none;
     }
 
     .hero-h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.75rem, 5.5vw, 4.75rem);
-      font-weight: 600;
-      line-height: 1.08;
-      letter-spacing: -0.02em;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       color: var(--white);
-      margin-bottom: 1.75rem;
+      margin-bottom: 0;
     }
     .hero-h1 em {
-      font-style: italic;
-      color: var(--blue-tint);
+      font-style: normal;
+      color: var(--white);
       display: block;
     }
 
     .hero-tagline {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1rem;
-      color: rgba(220,232,245,0.75);
-      letter-spacing: 0.02em;
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      align-items: flex-start;
-      justify-content: center;
+      display: none;
     }
 
     .hero-desc {
-      font-size: 0.95rem;
-      color: rgba(220,232,245,0.75);
-      line-height: 1.8;
-      max-width: 46ch;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      max-width: 480px;
+      font-weight: 400;
     }
 
     .hero-actions {
       display: flex;
-      gap: 0.875rem;
+      gap: 1rem;
       flex-wrap: wrap;
+      margin-top: 1rem;
+      justify-content: flex-start;
     }
 
     .btn-primary {
@@ -1102,10 +1083,48 @@ const differentiators = [
       line-height: 1.75;
     }
 
+    /* ── Why Us — KLCC backdrop, washed light ── */
+    #why-us {
+      position: relative;
+      isolation: isolate;
+      background: var(--white);
+    }
+    #why-us::before,
+    #why-us::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    #why-us::before {
+      background-image: url('https://images.unsplash.com/photo-1566914447826-bf04e54bf1be?w=1800&q=80&fm=jpg&fit=crop');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    #why-us::after {
+      z-index: -1;
+      background: rgba(255,255,255,0.9);
+    }
+
     /* ─── SECTION 8 — CONTACT ────────────────────────────────────────── */
+    #contact {
+      background: linear-gradient(135deg, #1e5a96 0%, #2d4a7c 100%);
+      color: var(--white);
+      position: relative;
+    }
+    #contact .section-label {
+      color: rgba(255,255,255,0.7);
+    }
+    #contact .section-label::before {
+      background: rgba(255,255,255,0.5);
+    }
+    #contact .section-title {
+      color: var(--white);
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
+      grid-template-columns: 1fr 1.5fr;
       gap: 5rem;
       align-items: start;
     }
@@ -1117,87 +1136,87 @@ const differentiators = [
     }
 
     .contact-quote {
-      background: rgba(74,122,181,0.1);
-      border-left: 3px solid var(--accent);
-      padding: 1.25rem 1.5rem;
+      background: transparent;
+      border-left: none;
+      padding: 0;
       font-family: var(--font-display);
-      font-style: italic;
+      font-style: normal;
       font-size: 0.95rem;
-      color: var(--ink-900);
+      color: rgba(255,255,255,0.85);
       line-height: 1.65;
     }
 
     .contact-details {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
     }
     .contact-row-label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: rgba(255,255,255,0.9);
       display: block;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
     .contact-row-value {
       font-size: 0.875rem;
-      color: var(--ink-700);
+      color: rgba(255,255,255,0.85);
       line-height: 1.5;
     }
 
     /* Contact form */
     .contact-form {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
 
     .form-title {
       font-family: var(--font-display);
       font-size: 1.15rem;
       font-weight: 600;
-      color: var(--ink-900);
+      color: var(--white);
       margin-bottom: 0.25rem;
+      grid-column: 1 / -1;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
     .form-group label {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: capitalize;
+      color: rgba(255,255,255,0.9);
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
       padding: 0.75rem 1rem;
-      background: var(--off-white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-sm);
-      color: var(--ink-900);
+      background: #ffffff;
+      border: none;
+      border-radius: 2px;
+      color: #1a2744;
       font-family: var(--font-body);
       font-size: 0.875rem;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: background 0.2s;
     }
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .form-group textarea::placeholder { color: #ccc; }
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(74,122,181,0.1);
+      background: #f9f9f9;
     }
     .form-group select {
       appearance: none;
@@ -1224,7 +1243,7 @@ const differentiators = [
       background: var(--navy-900);
       color: var(--white);
       border: none;
-      border-radius: var(--radius-sm);
+      border-radius: 4px;
       font-family: var(--font-body);
       font-size: 0.78rem;
       font-weight: 700;
@@ -1232,11 +1251,10 @@ const differentiators = [
       text-transform: uppercase;
       cursor: pointer;
       width: 100%;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s;
     }
     .btn-submit:hover {
       background: var(--navy-800);
-      transform: translateY(-1px);
     }
 
     .form-note {
@@ -1298,7 +1316,6 @@ const differentiators = [
     /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
     @media (max-width: 960px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-right { display: none; }
       .about-header { grid-template-columns: 1fr; gap: 1.5rem; }
       .pillar-grid { grid-template-columns: 1fr 1fr; }
       .purpose-row { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -1339,15 +1356,13 @@ const differentiators = [
       .people-grid.team-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* ─── HERO WORD-BY-WORD FLOAT-UP ─────────────────────────────────────
-       Each hero element is individually animated with a staggered delay.
-       Left side fires first, right side begins after left has settled.
-       `animation-fill-mode: both` keeps elements hidden before delay fires.
+    /* ─── HERO FADE-IN ────────────────────────────────────────────────────
+       Two-stage fade, matching a plain block reveal (no per-word stagger).
     ──────────────────────────────────────────────────────────────────── */
-    @keyframes heroWordUp {
+    @keyframes heroFadeIn {
       from {
         opacity: 0;
-        transform: translateY(36px);
+        transform: translateY(24px);
       }
       to {
         opacity: 1;
@@ -1355,29 +1370,13 @@ const differentiators = [
       }
     }
 
-    /* base class — all hero words share this */
     .hw {
-      display: block; /* allow block-level stacking inside inline elements */
       opacity: 0;
-      animation: heroWordUp 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation: heroFadeIn 1.2s cubic-bezier(0.445, 0.05, 0.55, 0.9) both;
     }
 
-    /* ── Left side ── */
-    .hw-1 { animation-delay: 0.15s; }   /* eyebrow label */
-    .hw-2 { animation-delay: 0.50s; }   /* "Flowstate" */
-    .hw-3 { animation-delay: 0.85s; }   /* "Advisors" (italic) */
-    .hw-4 { animation-delay: 1.25s; }   /* tagline */
-
-    /* ── Right side — starts after left has settled ── */
-    .hw-5 { animation-delay: 1.70s; }   /* description paragraph */
-    .hw-6 { animation-delay: 2.05s; }   /* Get In Touch button */
-    .hw-7 { animation-delay: 2.30s; }   /* Learn More button */
-
-    /* hero-eyebrow already has flex display — restore it after .hw overrides */
-    .hero-eyebrow.hw { display: inline-flex; }
-    /* buttons are inline-flex — restore */
-    .btn-primary.hw,
-    .btn-outline-light.hw { display: inline-flex; }
+    .hw-1 { animation-delay: 0.2s; }
+    .hw-2 { animation-delay: 0.6s; }
 
     /* ─── SCROLL-TRIGGERED ENTRANCE ANIMATIONS ──────────────────────────
        All animations use only transform / opacity / filter (GPU-accelerated).
@@ -1433,40 +1432,6 @@ const differentiators = [
     [data-anim="scale-up"].is-visible {
       opacity: 1;
       transform: scale(1);
-    }
-
-    /* ── S5 · Blur-in to focus ── */
-    [data-anim="blur-in"] {
-      opacity: 0;
-      filter: blur(14px);
-      transform: scale(1.03);
-    }
-    [data-anim="blur-in"].is-visible {
-      opacity: 1;
-      filter: blur(0px);
-      transform: scale(1);
-    }
-
-    /* ── S6 · 3D Flip-in (rotateX) ── */
-    [data-anim="flip-in"] {
-      opacity: 0;
-      transform: perspective(900px) rotateX(22deg) translateY(40px);
-      transform-origin: top center;
-    }
-    [data-anim="flip-in"].is-visible {
-      opacity: 1;
-      transform: perspective(900px) rotateX(0deg) translateY(0);
-    }
-
-    /* ── S7 · Squeeze / Stretch reveal ── */
-    [data-anim="squeeze"] {
-      opacity: 0;
-      transform: scaleX(0.6) scaleY(1.2);
-      transform-origin: center center;
-    }
-    [data-anim="squeeze"].is-visible {
-      opacity: 1;
-      transform: scaleX(1) scaleY(1);
     }
 
     /* ── S8 · Staggered child fade-in (.pillar-card children) ── */
@@ -1548,18 +1513,14 @@ const differentiators = [
       <div class="wrap hero-inner">
         <div class="hero-left">
           <p class="hero-eyebrow hw hw-1">Corporate Advisory</p>
-          <h1 class="hero-h1">
-            <span class="hw hw-2">Flowstate</span>
-            <em class="hw hw-3">Advisors</em>
+          <h1 class="hero-h1 hw hw-1">
+            <span>Flowstate</span> <em>Advisors</em>
           </h1>
-          <p class="hero-tagline hw hw-4">{firm.quote}</p>
-        </div>
-
-        <div class="hero-right">
-          <p class="hero-desc hw hw-5">{firm.description}</p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn-primary hw hw-6">Get In Touch</a>
-            <a href="#about" class="btn-outline-light hw hw-7">Learn More</a>
+          <p class="hero-tagline hw hw-1">{firm.quote}</p>
+          <p class="hero-desc hw hw-2">{firm.description}</p>
+          <div class="hero-actions hw hw-2">
+            <a href="#contact" class="btn-primary">Get In Touch</a>
+            <a href="#about" class="btn-outline-light">Learn More</a>
           </div>
         </div>
       </div>
@@ -1691,7 +1652,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 5+6 — BOARD & TEAM gabungan (navy) -->
-    <section class="section section--navy" id="people" data-anim="blur-in">
+    <section class="section section--navy" id="people" data-anim="fade-up">
       <div class="wrap">
         <span class="section-label">Our People</span>
         <h2 class="section-title">Board & <em>Team</em></h2>
@@ -1761,7 +1722,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 7 — WHY US (tint) -->
-    <section class="section section--tint" id="why-us" data-anim="flip-in">
+    <section class="section section--tint" id="why-us" data-anim="slide-left">
       <div class="wrap">
         <div class="why-layout">
           <div class="why-left">
@@ -1792,7 +1753,7 @@ const differentiators = [
     </section>
 
     <!-- SECTION 8 — CONTACT (white) -->
-    <section class="section section--white" id="contact" data-anim="squeeze">
+    <section class="section section--white" id="contact" data-anim="fade-up">
       <div class="wrap">
         <span class="section-label">08 · Get In Touch</span>
         <h2 class="section-title" style="margin-bottom: 3rem;">
