@@ -8,11 +8,11 @@ const firm = {
   quote: "Clarity · Focus · Purposeful Execution",
   description:
     "An independent boutique corporate advisory firm delivering strategic, financial, and transaction advisory to corporations, entrepreneurs, investors, and the public sector, including governments, GLCs, SOEs, and statutory bodies.",
-  email: "enquiries@flowstateadvisors.com",
-  phone: "+60 3 0000 0000",
+  email: "enquiries@flowstateadvisors.my",
+  phone: "+603 8787 8800",
   location: "Kuala Lumpur · Singapore · Jakarta",
-  address: "Registered office address, Kuala Lumpur",
-  website: "www.flowstateadvisors.com",
+  address: "Suite 16-2, Menara TSR, No. 12, Jalan PJU 7/3, Mutiara Damansara, 47810 Petaling Jaya, Selangor, Malaysia",
+  website: "www.flowstateadvisors.my",
 };
 
 const aboutPillars = [
@@ -35,24 +35,24 @@ const aboutPillars = [
 
 const purposeItems = [
   {
-    title: "Corporate Finance & M&A",
-    description: "End-to-end deal execution, from origination and valuation through negotiation to completion.",
-    tags: ["Buy/sell-side M&A", "Capital raising", "Valuation", "Due diligence", "Transaction management"],
+    title: "Public Sector Advisory",
+    description: "Helping governments, GLCs and institutions reach policy outcomes that are commercially sound and implementable.",
+    tags: ["Economic development", "Investment promotion", "Commercialisation", "Strategic assets", "Infrastructure", "Policy-to-execution", "Institutional strengthening"],
   },
   {
-    title: "Strategy & Corporate Advisory",
-    description: "Board-level counsel on growth, structure, and transformation to unlock long-term value.",
-    tags: ["Strategy & transformation", "Restructuring", "Partnerships & JVs", "Succession"],
+    title: "Deals Advisory",
+    description: "The full transaction journey, from strategic rationale through valuation and structuring to completion.",
+    tags: ["M&A", "Divestments", "Capital raising", "Valuations", "Restructuring", "Joint ventures", "Strategic partnerships", "Public-private partnerships"],
   },
   {
-    title: "Government & Public Sector",
-    description: "Specialist advisory for governments, GLCs, and SOEs across the public-sector agenda.",
-    tags: ["PPP", "Privatisation", "GLC / SOE", "Investment promotion & FDI", "Infrastructure", "Economic development"],
+    title: "Strategy & Transformation",
+    description: "Deciding where to play, how to win, and what must change. Strategy built to be used, not shelved.",
+    tags: ["Growth strategy", "Portfolio strategy", "Market entry", "Operating model", "Organisational transformation", "Institutional reform"],
   },
   {
-    title: "Investment & Strategic Assets",
-    description: "Independent guidance across the investment lifecycle and management of strategic assets.",
-    tags: ["Investment advisory", "Asset acquisition & disposal", "Special situations", "Co-investment"],
+    title: "Value Creation & Implementation",
+    description: "Staying engaged beyond the recommendation to convert agreed direction into measurable results.",
+    tags: ["Post-deal value creation", "Performance improvement", "Business building", "Programmedelivery", "Transformation management", "Execution support"],
   },
 ];
 
@@ -92,20 +92,24 @@ const industries = [
 const board = [
   {
     name: "Dimishtra Sittampalam",
-    title: "Partner",
+    title: ["Public Sector Advisory",
+            "Strategy & Transformation",],
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
     points: [
-      "Add background point here.",
-      "Add background point here.",
+      "Specialise in public-sector strategy, technology and health policy.",
+      "Previously Deputy Chief of Staff at the Ministry of Health and Technology Adviser at MOSTI.",
+      "UCL alumnus",
     ],
   },
   {
     name: "Khairi Sulaiman",
-    title: "Executive Director",
+    title: ["Public Sector Advisory",
+            "Strategy & Transformation",],
     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
     points: [
-      "Add background point here.",
-      "Add background point here.",
+      "20+ years across strategy, policy-making and business transformation.",
+      "Previously at Sapura, Pos Malaysia and the Prime Minister’s Office.",
+      "MBA, Lancaster University"
     ],
   },
   {
@@ -113,26 +117,29 @@ const board = [
     title: "Executive Chairman",
     img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
     points: [
-      "Add background point here.",
-      "Add background point here.",
+      "A prominent Malaysian public figure with over two decades of service.",
+      "Minister of Health (2020-2021) and Minister of Youth & Sports (2013-2018).",
+      "Member of Parliament for Rembau, 2008 to 2022",
+      "PPE, University of Oxford.",
+      "MA, University College London.",
     ],
   },
   {
     name: "Rizuan Ahamad",
-    title: "Partner",
+    title: "Public Sector Advisory",
     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
     points: [
-      "Add background point here.",
-      "Add background point here.",
+      "Specialises in public-sector engagement, government affairs and strategic advisory.",
+      "Previously served as Private Secretary to Ministers at the Ministry of Youth and Sports, MOSTI and the Ministry of Health",
     ],
   },
   {
     name: "Ezri Othman",
-    title: "Partner",
+    title: ["Deal Advisory",
+            "Value Creation & Implementation",],
     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
     points: [
-      "Add background point here.",
-      "Add background point here.",
+      "More than 20 years of experience in assignments related to deal advisory and assurance services, out of which more than 10 years were spent in EY, including in its Sydney office.",
     ],
   },
 ];
@@ -230,9 +237,9 @@ const differentiators = [
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content={firm.description} />
   <title>{firm.name} — {firm.tagline}</title>
-  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
-  <link rel="shortcut icon" type="image/png" href="/favicon.png?v=2" />
-  <link rel="apple-touch-icon" href="/favicon.png?v=2" />
+  <link rel="icon" type="image/png" href="/favicon.png?v=3" />
+  <link rel="shortcut icon" type="image/png" href="/favicon.png?v=3" />
+  <link rel="apple-touch-icon" href="/favicon.png?v=3" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -290,12 +297,16 @@ const differentiators = [
 
     /* ─── RESET ──────────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overscroll-behavior-y: none;
+    }
     body {
       font-family: var(--font-body);
-      background: var(--white);
+      background: var(--navy-900);
       color: var(--ink-900);
       line-height: 1.65;
+      overscroll-behavior-y: none;
       -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; display: block; object-fit: cover; }
@@ -539,7 +550,7 @@ const differentiators = [
       top: 0;
       width: 60vw;
       height: 100vh;
-      background: linear-gradient(to right, rgba(74,122,181,1) 0%, rgba(74,122,181,0) 100%);
+      background: linear-gradient(to right, var(--navy-800) 0%, rgba(74,122,181,0) 100%);
       z-index: -8;
       pointer-events: none;
     }
@@ -567,7 +578,7 @@ const differentiators = [
     }
 
     .gradient{
-      background: linear-gradient(to right, var(--accent), var(--navy-900));
+      background: linear-gradient(to right, var(--accent), var(--navy-800));
     }
 
     .hero-eyebrow {
@@ -764,7 +775,7 @@ const differentiators = [
       display: flex;
       flex-direction: column;
       gap: 1px;
-      margin-top: 3rem;
+      margin-top: 0;
       background: var(--border-subtle);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
@@ -778,6 +789,8 @@ const differentiators = [
       padding: 2rem 2.25rem;
       background: var(--blue-light);
       transition: background 0.2s;
+      align-items: center;
+      justify-items: start;
     }
     .purpose-row:hover { background: #e2ecf7; }
 
@@ -813,8 +826,8 @@ const differentiators = [
       line-height: 1.5;
     }
     .purpose-tags .sep {
-      color: var(--accent);
-      opacity: 0.4;
+      color: var(--accent-dark);
+      opacity: 0.8;
       margin: 0 0.35em;
     }
 
@@ -1329,6 +1342,8 @@ const differentiators = [
 
     /* ─── FOOTER ─────────────────────────────────────────────────────── */
     .footer {
+      position: relative;
+      z-index: 20;
       background: var(--navy-900);
       padding-block: 3rem;
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -1626,8 +1641,9 @@ const differentiators = [
       <div class="wrap">
 
         <!-- Label and title float up individually -->
-        <span class="section-label" data-anim="fade-up" style="--anim-delay: 0s;">What we do</span>
+        
         <h2 class="section-title" data-anim="fade-up" style="--anim-delay: 0.4s;">Advisory Built Around <em>Outcomes</em></h2>
+        <span class="section-label" data-anim="fade-up" style="--anim-delay: 0s;">Strategy, deals and public-sector advisory under one roof</span>
 
         <!-- Each row floats up in sequence after the title -->
         <div class="purpose-list">
