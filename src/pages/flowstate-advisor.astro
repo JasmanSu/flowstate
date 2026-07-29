@@ -300,6 +300,8 @@ const differentiators = [
     html {
       scroll-behavior: smooth;
       overscroll-behavior-y: none;
+      overflow-x: hidden;
+      width: 100%;
     }
     body {
       font-family: var(--font-body);
@@ -307,6 +309,8 @@ const differentiators = [
       color: var(--ink-900);
       line-height: 1.65;
       overscroll-behavior-y: none;
+      overflow-x: hidden;
+      width: 100%;
       -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; display: block; object-fit: cover; }
@@ -513,7 +517,7 @@ const differentiators = [
     /* ─── SECTION 1 — HERO / HOOK ────────────────────────────────────── */
     .hero {
       position: relative;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -546,10 +550,8 @@ const differentiators = [
     .hero-bg::before {
       content: '';
       position: fixed;
-      left: 0;
-      top: 0;
-      width: 60vw;
-      height: 100vh;
+      inset: 0;
+      right: 40%;
       background: linear-gradient(to right, var(--navy-800) 0%, rgba(74,122,181,0) 100%);
       z-index: -8;
       pointer-events: none;
@@ -602,12 +604,13 @@ const differentiators = [
 
     .hero-h1 {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-size: clamp(2.75rem, 6vw + 1.5rem, 4.5rem);
       font-weight: 400;
-      line-height: 1.15;
+      line-height: 1.12;
       letter-spacing: -0.02em;
       color: var(--white);
       margin-bottom: 0;
+      text-shadow: 0 4px 28px rgba(0,0,0,0.35);
     }
     .hero-h1 span {
       display: block;
@@ -1184,9 +1187,27 @@ const differentiators = [
 
     /* ─── SECTION 8 — CONTACT ────────────────────────────────────────── */
     #contact {
-      background: linear-gradient(135deg, #1e5a96 0%, #2d4a7c 100%);
       color: var(--white);
       position: relative;
+      isolation: isolate;
+      background: var(--navy-900);
+    }
+    #contact::before,
+    #
+    contact::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    #contact::before {
+      background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1800&q=85');
+      background-size: cover;
+      background-position: center 30%;
+    }
+    #contact::after {
+      z-index: -1;
+      background: linear-gradient(135deg, rgba(30,90,150,0.93) 0%, rgba(45,74,124,0.93) 100%);
     }
     #contact .section-label {
       color: rgba(255,255,255,0.7);
@@ -1344,7 +1365,7 @@ const differentiators = [
     .footer {
       position: relative;
       z-index: 20;
-      background: var(--navy-900);
+      background: var(--white);
       padding-block: 3rem;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
@@ -1362,11 +1383,11 @@ const differentiators = [
       font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--black);
     }
     .footer-reg {
       font-size: 0.68rem;
-      color: rgba(220,232,245,0.4);
+      color: rgba(0,0,0,0.5);
       letter-spacing: 0.04em;
     }
 
@@ -1378,22 +1399,32 @@ const differentiators = [
     }
     .footer-links a {
       font-size: 0.78rem;
-      color: rgba(220,232,245,0.5);
+      color: rgba(0,0,0,0.7);
       text-decoration: none;
       letter-spacing: 0.04em;
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
+    .footer-links a:hover { color: var(--black); }
 
     .footer-location {
       font-size: 0.72rem;
-      color: rgba(220,232,245,0.35);
+      color: rgba(0,0,0,0.5);
       letter-spacing: 0.06em;
     }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────────────── */
+    /* Nav collapses to hamburger before the logo+links+CTA row runs out of room */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
     @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 4rem 3rem; }
+      .hero-left { gap: 1.5rem; }
+      .hero-right { gap: 1.5rem; }
+      .hero-desc { max-width: 100%; }
+      .hero-bg::before { right: 0; }
       .about-header { grid-template-columns: 1fr; gap: 1.5rem; }
       .pillar-grid { grid-template-columns: 1fr 1fr; }
       .purpose-row { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -1410,16 +1441,33 @@ const differentiators = [
       .why-left { position: static; }
       .diff-list { grid-template-columns: 1fr 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .contact-form { padding: 2rem; }
+      .contact-form { grid-template-columns: 1fr; gap: 1.5rem; }
     }
 
     @media (max-width: 680px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
       .pillar-grid { grid-template-columns: 1fr; }
       .industry-grid { grid-template-columns: 1fr; }
       .people-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
       .people-grid.board-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .person-card--featured {
+        grid-column: 1 / -1;
+        order: -1;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .person-card--featured .person-photo {
+        width: 45%;
+        flex-shrink: 0;
+      }
+      .person-card--featured .person-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding-top: 0.25rem;
+      }
       .diff-list { grid-template-columns: 1fr; }
       .diff-item:nth-child(2) { border-top: none; }
       .people-grid.team-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
@@ -1430,7 +1478,9 @@ const differentiators = [
     }
 
     @media (max-width: 400px) {
-      .hero-h1 { font-size: 2.25rem; }
+      .hero-eyebrow { margin-bottom: 1rem; }
+      .hero-actions { gap: 1rem; }
+      .btn-primary, .btn-outline-light { padding: 0.8rem 1.4rem; }
       .people-grid.team-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -1750,24 +1800,47 @@ const differentiators = [
           </p>
           <div class="people-grid board-grid">
             {board.map(m => (
-              <div class="person-card">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  class="person-photo"
-                  loading="lazy"
-                />
-                <div>
-                  <span class="person-name">{m.name}</span>
-                  <br>
-                  <span class="person-role">{m.title}</span>
+              m.title === "Executive Chairman" ? (
+                <div class="person-card person-card--featured">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    class="person-photo"
+                    loading="lazy"
+                  />
+                  <div class="person-info">
+                    <div>
+                      <span class="person-name">{m.name}</span>
+                      <br>
+                      <span class="person-role">{m.title}</span>
+                    </div>
+                    <ul class="person-points">
+                      {m.points.map(p => (
+                        <li>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <ul class="person-points">
-                  {m.points.map(p => (
-                    <li>{p}</li>
-                  ))}
-                </ul>
-              </div>
+              ) : (
+                <div class="person-card">
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    class="person-photo"
+                    loading="lazy"
+                  />
+                  <div>
+                    <span class="person-name">{m.name}</span>
+                    <br>
+                    <span class="person-role">{m.title}</span>
+                  </div>
+                  <ul class="person-points">
+                    {m.points.map(p => (
+                      <li>{p}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             ))}
           </div>
         </div>
