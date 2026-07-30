@@ -1,13 +1,13 @@
 ---
-import logoWhite from '../assets/FLOWSTATE_LOGO_Reverse_white.png';
-import logo from '../assets/FLOWSTATE_LOGO.png';  
+import logo from '../assets/FLOWSTATE_LOGO.png';
+import logoWhite from '../assets/FLOWSTATE_LOGO_Reverse_white.png';  
 
 const firm = {
   name: "Flowstate Advisors",
   tagline: "Strategic Clarity. Transformative Outcomes.",
   quote: "Clarity · Focus · Purposeful Execution",
   description:
-    "An independent boutique corporate advisory firm delivering strategic, financial, and transaction advisory to corporations, entrepreneurs, investors, and the public sector, including governments, GLCs, SOEs, and statutory bodies.",
+    "Flowstate Advisors is an independent boutique corporate advisory firm delivering strategic, financial, and transaction advisory to corporations, entrepreneurs, investors, and the public sector, including governments, GLCs, SOEs, and statutory bodies.",
   email: "enquiries@flowstateadvisors.my",
   phone: "+603 8787 8800",
   location: "Kuala Lumpur · Singapore · Jakarta",
@@ -78,7 +78,7 @@ const industries = [
     accent: "gold",
     title: "Consumer & Services",
     img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
-    items: ["Financial Services", "Healthcare", "Consumer & Retail", "Education", "Tourism & Hospitality", "Professional Services"],
+    items: ["Healthcare", "Consumer & Retail", "Education", "Tourism & Hospitality", "Professional Services"],
   },
   {
     accent: "green",
@@ -91,141 +91,51 @@ const industries = [
 // Board & Team — Unsplash professional headshots sebagai placeholder
 const board = [
   {
-    name: "Dimishtra Sittampalam",
-    title: ["Public Sector Advisory",
-            "Strategy & Transformation",],
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "Specialise in public-sector strategy, technology and health policy.",
-      "Previously Deputy Chief of Staff at the Ministry of Health and Technology Adviser at MOSTI.",
-      "UCL alumnus",
-    ],
-  },
-  {
-    name: "Khairi Sulaiman",
-    title: ["Public Sector Advisory",
-            "Strategy & Transformation",],
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "20+ years across strategy, policy-making and business transformation.",
-      "Previously at Sapura, Pos Malaysia and the Prime Minister’s Office.",
-      "MBA, Lancaster University"
-    ],
-  },
-  {
     name: "Khairy Jamaluddin",
     title: "Executive Chairman",
     img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-    points: [
-      "A prominent Malaysian public figure with over two decades of service.",
-      "Minister of Health (2020-2021) and Minister of Youth & Sports (2013-2018).",
+    tagline: "Former Minister of Health; Minister of Science, Technology & Innovation; Minister of Youth & Sports; Member of Parliament for Rembau & Head of UMNO Youth Malaysia",
+    highlights: [
+      "Podcast Host",
+      "Radio Presenter",
+      "Entrepreneur",
+    ],
+    bio: "Khairy Jamaluddin is one of Malaysia's most recognised public figures, with more than two decades of service at the highest levels of national life. He held three Cabinet portfolios as Minister of Health, Minister of Science, Technology and Innovation, and Minister of Youth and Sports, and served as Member of Parliament for Rembau from 2008 to 2022. As Health Minister, he coordinated the national COVID prevention programme, guiding one of the country's largest logistical efforts to among the highest immunisation rates in the world.",
+    bio2: "He began his career as a correspondent with The Economist in London before working across government, investment banking and enterprise, and later helped found a national policy think tank. Today he hosts Keluar Sekejap, Malaysia's leading political podcast. He brings deep policy insight, commercial judgement and trusted relationships across government and industry to the clients Flowstate serves.",
+    selectedHighlights: [
+      "Minister of Health, 2021 to 2022",
+      "Coordinating Minister, National COVID Immunisation Programme",
+      "Minister of Science, Technology & Innovation, 2020 to 2021",
+      "Minister of Youth & Sports, 2013 to 2018",
       "Member of Parliament for Rembau, 2008 to 2022",
-      "PPE, University of Oxford.",
-      "MA, University College London.",
-    ],
-  },
-  {
-    name: "Rizuan Ahamad",
-    title: "Public Sector Advisory",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "Specialises in public-sector engagement, government affairs and strategic advisory.",
-      "Previously served as Private Secretary to Ministers at the Ministry of Youth and Sports, MOSTI and the Ministry of Health",
-    ],
-  },
-  {
-    name: "Ezri Othman",
-    title: ["Deal Advisory",
-            "Value Creation & Implementation",],
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "More than 20 years of experience in assignments related to deal advisory and assurance services, out of which more than 10 years were spent in EY, including in its Sydney office.",
+      "PPE, University of Oxford",
+      "MA, University College London",
     ],
   },
 ];
 
-const team = [
-  {
-    name: "Fakhrulrazi Fauzi",
-    title: "M&A & Corporate Finance",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "More than 18 years of experience providing M&A advisory services, transaction diligence, valuation and strategy to various MNCs and GLCs.",
-      "Previously worked in EY and Ekuinas.",
-    ],
-  },
-  {
-    name: "Li Kai",
-    title: "Strategy & Transformation",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "Former Senior Partner, Mckinsey & Co and Managing Partner, Malaysia.",
-      "More than 25 years in corporate advisory and former Global Head, Mckinsey Education Practice.",
-      "Partner, Natural Capital Partners, a sustainability advisory firm.",
-    ],
-  },
-  {
-    name: "Nik Sharifidin",
-    title: "Strategy & Transformation",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "Former Senior Advisor, Mckinsey & Co and Strategy Head, Khazanah Nasional.",
-      "25 years in strategy and investments across GLCs in Energy, Education, Healthcare and Food.",
-      "Partner, Natural Capital Partners, a sustainability advisory firm.",
-    ],
-  },
-  {
-    name: "Deepak Roy",
-    title: "Strategy & Transformation",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80",
-    points: [
-      "Former Mckinsey Transformation & Natural Capital Practice Lead, SEA.",
-      "Venture builder across Food, Agriculture, Renewables and Circular Economy in Asia Pacific.",
-      "Managing Partner, Natural Capital Partners, a sustainability advisory firm.",
-    ],
-  },
-];
+const team = [];
 
 const differentiators = [
   {
     title: "01 Proven Track Record",
-    body: "Chaired by a former federal minister.",
+    body: "Chaired by a former federal minister, supported by senior advisers with extensive corporate, strategy and transaction experience.",
   },
   {
     title: "02 Strong Local Talent",
-    body: "A deep Malaysian Bench, built to compete.",
+    body: "A deep Malaysian Bench with senior advisers who understand the market from the inside.",
   },
   {
-    title: "03 Independent & Objective",
-    body: "No house view or conflicts, only candid advice.",
+    title: "03 Sovereign-level Impact",
+    body: "Elite global strategic execution delivered by Malaysian for Malaysian's future growth.",
   },
   {
-    title: "04 Senior-Led",
-    body: "Partners on the work, not just the pitch.",
+    title: "04 Deep Local Networks" ,
+    body: "Unrivaled access to key Malaysian decision-makers, regulators, and industry leaders.",
   },
   {
-    title: "05 Cross-sectore Reach",
-    body: "Private enterprise to public instituitions.",
-  },
-  {
-    title: "06 Strategy to Execution",
-    body: "Sharp thinking carried to measurable outcomes.",
-  },
-  {
-    title: "07 Practical Solutions",
-    body: "Commercially grounded and built to implement",
-  },
-  {
-    title: "08 Tailored Advisory",
-    body: "Scoped to your situation, never a template",
-  },
-  {
-    title: "09 Long-Term Partnership",
-    body: "Advisors for the journey, not one dead",
-  },
-  {
-    title: "10 Absolute Confidentiality",
-    body: "Discreation maintained at every step.",
+    title: "05 Leading Execution",
+    body: "Taking a front role in driving execution including deals vs the typical back-engine support.",
   },
 ];
 ---
@@ -1001,6 +911,179 @@ const differentiators = [
     .industry-card[data-accent="gold"]  .dot { background: var(--acc-gold); }
     .industry-card[data-accent="green"] .dot { background: var(--acc-green); }
 
+    /* ─── SECTION 5 — BOARD (hero layout) ────────────────────────────– */
+    .board-hero {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      align-items: stretch;
+      min-height: auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .board-left {
+      background: var(--navy-800);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem clamp(1.75rem, 3vw, 2.5rem);
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .board-photo {
+      width: 100%;
+      max-width: 200px;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.75rem;
+    }
+
+    .board-left-info {
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .board-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 1.85rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .board-title {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .board-tagline {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .board-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .board-highlights li {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .board-highlights li::before {
+      content: "›";
+      font-size: 1.25rem;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .board-footer {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+
+    .board-right {
+      background: var(--white);
+      padding: 2.5rem clamp(1.75rem, 4vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .board-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .board-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 600;
+      color: var(--ink-900);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .board-bio {
+      font-size: 0.8rem;
+      color: var(--ink-700);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .board-bio + .board-bio {
+      margin-top: 1rem;
+    }
+
+    .board-highlights-section {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .board-highlights-title {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
+
+    .board-highlights-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .board-highlights-list li {
+      font-size: 0.9rem;
+      color: var(--ink-700);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .board-highlights-list li::before {
+      content: "›";
+      font-size: 1.1rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
     /* ─── SECTION 5+6 — BOARD & TEAM (gabungan) ─────────────────────── */
     .people-section-title {
       font-family: var(--font-display);
@@ -1109,57 +1192,156 @@ const differentiators = [
       letter-spacing: 0.02em;
     }
 
-    /* ─── SECTION 7 — WHY US ──────────────────────────────────────────── */
-    .why-layout {
+    /* ─── SECTION 7 — WHY US (split layout) ─────────────────────────────── */
+    .why-hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 0;
+      align-items: stretch;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: auto;
     }
-    .why-left {
-      position: sticky;
-      top: 100px;
-    }
-    .why-left .section-intro { max-width: 38ch; }
 
-    .diff-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 2.5rem;
-      margin-top: 0;
+    .why-left-col {
+      background: var(--blue-light);
+      padding: 3rem clamp(2rem, 4vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .diff-item {
-      padding: 1.5rem 0;
-      border-bottom: 1px solid var(--border-subtle);
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 1rem;
-      align-items: start;
-      transition: background 0.2s;
-    }
-    /* Top rule on the first item of each column */
-    .diff-item:nth-child(1),
-    .diff-item:nth-child(2) { border-top: 1px solid var(--border-subtle); }
 
-    .diff-num {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--border);
-      line-height: 1;
-      padding-top: 2px;
+    .why-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 1.5rem;
     }
-    .diff-title {
+
+    .why-heading {
       font-family: var(--font-display);
-      font-size: 1.05rem;
+      font-size: clamp(1.75rem, 3vw, 2.2rem);
       font-weight: 600;
       color: var(--ink-900);
-      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      margin: 0 0 2rem 0;
     }
-    .diff-body {
-      font-size: 0.875rem;
-      color: var(--muted);
+
+    .why-intro {
+      font-size: 0.95rem;
+      color: var(--ink-700);
       line-height: 1.75;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .why-footer {
+      font-size: 0.7rem;
+      color: rgba(26, 39, 68, 0.5);
+      letter-spacing: 0.06em;
+      margin-top: auto;
+      padding-top: 2rem;
+      margin: 0;
+    }
+
+    .why-right-col {
+      background: var(--navy-800);
+      color: var(--white);
+      padding: 3rem clamp(2rem, 4vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-right-col::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1800&q=80&crop=entropy&cs=tinysrgb&fit=max');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      z-index: 1;
+    }
+
+    .why-right-col > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .why-subheading {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      color: var(--blue-tint);
+      line-height: 1.2;
+      margin: 0 0 1rem 0;
+    }
+
+    .why-description {
+      font-size: 0.9rem;
+      color: rgba(220, 232, 245, 0.85);
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 2rem 0;
+    }
+
+    .why-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(220, 232, 245, 0.12);
+    }
+
+    .why-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .why-number {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--blue-tint);
+      line-height: 1.3;
+      flex-shrink: 0;
+      width: 2ch;
+    }
+
+    .why-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      min-width: 0;
+    }
+
+    .why-item-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 0;
+    }
+
+    .why-item-body {
+      font-size: 0.85rem;
+      color: rgba(220, 232, 245, 0.75);
+      line-height: 1.6;
+      margin: 0;
     }
 
     /* ── Why Us — KLCC backdrop, washed light ── */
@@ -1185,180 +1367,170 @@ const differentiators = [
       background: rgba(255,255,255,0.9);
     }
 
-    /* ─── SECTION 8 — CONTACT ────────────────────────────────────────── */
-    #contact {
-      color: var(--white);
+    /* ─── SECTION 8 — CONTACT (split hero) ──────────────────────────── */
+    .contact-hero {
       position: relative;
-      isolation: isolate;
-      background: var(--navy-900);
-    }
-    #contact::before,
-    #
-    contact::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-    }
-    #contact::before {
-      background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1800&q=85');
-      background-size: cover;
-      background-position: center 30%;
-    }
-    #contact::after {
-      z-index: -1;
-      background: linear-gradient(135deg, rgba(30,90,150,0.93) 0%, rgba(45,74,124,0.93) 100%);
-    }
-    #contact .section-label {
-      color: rgba(255,255,255,0.7);
-    }
-    #contact .section-label::before {
-      background: rgba(255,255,255,0.5);
-    }
-    #contact .section-title {
-      color: var(--white);
-    }
-
-    .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 5rem;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      z-index: 20;
     }
 
-    .contact-left {
+    .contact-hero-left {
+      background: linear-gradient(135deg, var(--navy-700) 0%, var(--navy-900) 100%);
+      color: var(--white);
+      padding: clamp(2.5rem, 6vw, 5rem);
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      justify-content: space-between;
+      gap: 3rem;
     }
 
-    .contact-quote {
-      background: transparent;
-      border-left: none;
-      padding: 0;
+    .contact-hero-title {
       font-family: var(--font-display);
-      font-style: normal;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
+      font-size: clamp(2.25rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .contact-hero-intro {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
       line-height: 1.65;
+      max-width: 42ch;
+      margin: 0;
     }
 
-    .contact-details {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-    .contact-row-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .contact-row-value {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-    }
-
-    /* Contact form */
-    .contact-form {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .contact-hero-bottom {
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
     }
 
-    .form-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.25rem;
-      grid-column: 1 / -1;
+    .contact-hero-rule {
+      height: 1px;
+      background: rgba(255,255,255,0.2);
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .form-group label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: capitalize;
-      color: rgba(255,255,255,0.9);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      padding: 0.75rem 1rem;
-      background: #ffffff;
-      border: none;
-      border-radius: 2px;
-      color: #1a2744;
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      outline: none;
-      transition: background 0.2s;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: #ccc; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      background: #f9f9f9;
-    }
-    .form-group select {
-      appearance: none;
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b7a99' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-
-    .form-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .btn-submit {
+    .contact-hero-brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9rem 1.5rem;
-      background: var(--navy-900);
-      color: var(--white);
-      border: none;
-      border-radius: 4px;
-      font-family: var(--font-body);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s;
-    }
-    .btn-submit:hover {
-      background: var(--navy-800);
+      gap: 0.85rem;
     }
 
-    .form-note {
+    .contact-hero-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .contact-hero-wordmark {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-hero-wm-top {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    .contact-hero-wm-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.6);
+      margin-top: 2px;
+    }
+
+    .contact-hero-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-hero-label {
       font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-hero-value {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.55;
+      margin: 0 0 0.6rem 0;
+    }
+
+    .contact-hero-value svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .contact-hero-right {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .contact-hero-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1800&q=85');
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .contact-hero-card {
+      position: absolute;
+      right: clamp(1.5rem, 4vw, 3rem);
+      bottom: clamp(1.5rem, 4vw, 3rem);
+      max-width: 340px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    }
+
+    .contact-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .contact-card-body {
+      font-size: 0.85rem;
+      color: var(--ink-700);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .contact-card-rule {
+      height: 1px;
+      background: var(--border);
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    .contact-card-note {
+      font-size: 0.75rem;
       color: var(--muted);
-      text-align: center;
-      line-height: 1.6;
+      font-style: italic;
+      margin: 0;
     }
 
     /* ─── FOOTER ─────────────────────────────────────────────────────── */
@@ -1437,11 +1609,18 @@ const differentiators = [
       .people-grid { grid-template-columns: repeat(2, 1fr); }
       .people-grid.board-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: stretch; }
       .people-grid.team-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 100%; }
-      .why-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .why-left { position: static; }
-      .diff-list { grid-template-columns: 1fr 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .contact-form { grid-template-columns: 1fr; gap: 1.5rem; }
+      .board-hero { grid-template-columns: 1fr; min-height: auto; }
+      .board-left { padding: 2rem var(--pad-x); }
+      .board-right { padding: 2rem var(--pad-x); }
+      .why-hero { grid-template-columns: 1fr; min-height: auto; }
+      .why-left-col { padding: 2rem; display: none; }
+      .why-right-col { padding: 2rem 1.5rem; }
+      .why-item { flex-direction: column; align-items: center; text-align: center; gap: 0.35rem; }
+      .why-content { align-items: center; }
+      .contact-hero { grid-template-columns: 1fr; min-height: auto; }
+      .contact-hero-left { padding: 2.5rem var(--pad-x); }
+      .contact-hero-right { min-height: 420px; }
+      .contact-hero-card { left: var(--pad-x); right: var(--pad-x); max-width: none; }
     }
 
     @media (max-width: 680px) {
@@ -1471,8 +1650,8 @@ const differentiators = [
       .diff-list { grid-template-columns: 1fr; }
       .diff-item:nth-child(2) { border-top: none; }
       .people-grid.team-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .contact-details { grid-template-columns: 1fr; }
-      .form-row-2 { grid-template-columns: 1fr; }
+      .contact-hero-info { grid-template-columns: 1fr; gap: 1.5rem; }
+      .contact-hero-card { padding: 1.5rem; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .footer-links { gap: 1rem; }
     }
@@ -1783,217 +1962,139 @@ const differentiators = [
       </div>
     </section>
 
-    <!-- SECTION 5+6 — BOARD & TEAM gabungan (navy) -->
+    <!-- SECTION 5 — BOARD (hero layout) -->
     <section class="section section--navy" id="people" data-anim="fade-up">
       <div class="wrap">
-        <span class="section-label">Our People</span>
-        <h2 class="section-title">Board & <em>Team</em></h2>
-        <p class="section-intro">
-          Experienced principals and advisors across corporate finance, strategy,
-          and public sector advisory.
-        </p>
+      {board.map(m => (
+        <div class="board-hero">
+          <div class="board-left">
+            <img
+              src={m.img}
+              alt={m.name}
+              class="board-photo"
+              loading="lazy"
+            />
+            <div class="board-left-info">
+              <h2 class="board-name">{m.name}</h2>
+              <p class="board-title">{m.title}</p>
+              <p class="board-tagline">{m.tagline}</p>
+              <ul class="board-highlights">
+                {m.highlights.map(h => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </div>
+            <p class="board-footer">Flowstate Advisors · Corporate Profile 2026</p>
+          </div>
+          <div class="board-right">
+            <span class="board-label">06 · Leadership</span>
+            <h3 class="board-heading">National service at the highest level</h3>
+            <p class="board-bio">{m.bio}</p>
+            <p class="board-bio">{m.bio2}</p>
+            <div class="board-highlights-section">
+              <h4 class="board-highlights-title">Selected Highlights</h4>
+              <ul class="board-highlights-list">
+                {m.selectedHighlights.map(h => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+      </div>
+    </section>
 
-        <!-- Board -->
-        <div style="margin-top: 3rem;">
-          <p class="people-section-title" style="color: rgba(220,232,245,0.5); border-color: rgba(255,255,255,0.08);">
-            Board of Directors
-          </p>
-          <div class="people-grid board-grid">
-            {board.map(m => (
-              m.title === "Executive Chairman" ? (
-                <div class="person-card person-card--featured">
-                  <img
-                    src={m.img}
-                    alt={m.name}
-                    class="person-photo"
-                    loading="lazy"
-                  />
-                  <div class="person-info">
-                    <div>
-                      <span class="person-name">{m.name}</span>
-                      <br>
-                      <span class="person-role">{m.title}</span>
+    <!-- SECTION 7 — WHY US (split layout) -->
+    <section class="section section--white" id="why-us" data-anim="fade-up">
+      <div class="wrap">
+        <div class="why-hero">
+          <div class="why-left-col">
+            <span class="why-label">08 · Why Flowstate</span>
+            <h2 class="why-heading">Why Flowstate?</h2>
+            <p class="why-intro">Trusted advice, rigorous analysis, and practical solutions. Delivered with senior commitment on every engagement.</p>
+            <p class="why-footer">Flowstate Advisors · Corporate Profile 2026</p>
+          </div>
+
+          <div class="why-right-col">
+            <h3 class="why-subheading">The Boutique Advantage</h3>
+            <p class="why-description">Direct access to senior advisers, personalised attention, greater flexibility, and faster, conflict-free decisions. Anchored by an Executive Chairman who served more than 10 years in the federal Cabinet, bringing rare public-sector standing and reach.</p>
+
+            <div class="why-items">
+              {differentiators.map((d) => {
+                const match = d.title.match(/^(\d+)\s+(.*)$/);
+                const num = match ? match[1] : "";
+                const title = match ? match[2] : d.title;
+                return (
+                  <div class="why-item">
+                    <span class="why-number">{num}</span>
+                    <div class="why-content">
+                      <h4 class="why-item-title">{title}</h4>
+                      <p class="why-item-body">{d.body}</p>
                     </div>
-                    <ul class="person-points">
-                      {m.points.map(p => (
-                        <li>{p}</li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
-              ) : (
-                <div class="person-card">
-                  <img
-                    src={m.img}
-                    alt={m.name}
-                    class="person-photo"
-                    loading="lazy"
-                  />
-                  <div>
-                    <span class="person-name">{m.name}</span>
-                    <br>
-                    <span class="person-role">{m.title}</span>
-                  </div>
-                  <ul class="person-points">
-                    {m.points.map(p => (
-                      <li>{p}</li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            ))}
+                );
+              })}
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Team -->
-        <div style="margin-top: 3.5rem;">
-          <p class="people-section-title" style="color: rgba(220,232,245,0.5); border-color: rgba(255,255,255,0.08);">
-            Execution Team
+    <!-- SECTION 8 — CONTACT (split hero) -->
+    <section class="contact-hero" id="contact" data-anim="fade-up">
+      <div class="contact-hero-left">
+        <div class="contact-hero-top">
+          <h2 class="contact-hero-title">Let's begin the<br/>conversation.</h2>
+          <p class="contact-hero-intro">
+            Every engagement starts with a confidential discussion, to understand
+            your objectives and how we can help.
           </p>
-          <div class="people-grid team-grid">
-            {team.map(m => (
-              <div class="person-card">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  class="person-photo"
-                  loading="lazy"
-                />
-                <div>
-                  <span class="person-name">{m.name}</span>
-                  <br>
-                  <span class="person-role">{m.title}</span>
-                </div>
-                <ul class="person-points">
-                  {m.points.map(p => (
-                    <li>{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+        </div>
+
+        <div class="contact-hero-bottom">
+          <div class="contact-hero-rule"></div>
+
+          <div class="contact-hero-brand">
+            <img src={logoWhite.src} alt="Flowstate Advisors Logo" class="contact-hero-logo" />
+            <div class="contact-hero-wordmark">
+              <span class="contact-hero-wm-top">FLOWSTATE</span>
+              <span class="contact-hero-wm-sub">ADVISORS</span>
+            </div>
+          </div>
+
+          <div class="contact-hero-info">
+            <div class="contact-hero-col">
+              <span class="contact-hero-label">Our Office</span>
+              <p class="contact-hero-value">{firm.address}</p>
+            </div>
+            <div class="contact-hero-col">
+              <span class="contact-hero-label">Contact Us</span>
+              <p class="contact-hero-value">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                {firm.phone}
+              </p>
+              <p class="contact-hero-value">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+                {firm.email}
+              </p>
+              <p class="contact-hero-value">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                {firm.website}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- SECTION 7 — WHY US (tint) -->
-    <section class="section section--tint" id="why-us" data-anim="slide-left">
-      <div class="wrap">
-        <div class="why-layout">
-          <div class="why-left">
-            <span class="section-label">Why Flowstate</span>
-            <h2 class="section-title">
-              The Firm Built for<br/>
-              <em>Clients Who Demand More</em>
-            </h2>
-            <p class="section-intro">
-              Trusted advice, rigorous analysis,
-              and practical solutions. Delivered with senior commitment on every engagement.
-            </p>
-          </div>
+      <div class="contact-hero-right">
+        <div class="contact-hero-image"></div>
 
-          <div class="diff-list">
-            {differentiators.map((d, i) => (
-              <div class="diff-item">
-                <span class="diff-num">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 class="diff-title">{d.title.replace(/^\d+\s+/, "")}</h3>
-                  <p class="diff-body">{d.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8 — CONTACT (white) -->
-    <section class="section section--white" id="contact" data-anim="fade-up">
-      <div class="wrap">
-        <span class="section-label">08 · Get In Touch</span>
-        <h2 class="section-title" style="margin-bottom: 3rem;">
-          Let's Begin the<br/><em>Conversation</em>
-        </h2>
-
-        <div class="contact-grid">
-          <div class="contact-left">
-            <p class="contact-quote">
-              Every engagement starts with a confidential discussion, to understand
-              your objectives and how we can help.
-            </p>
-
-            <div class="contact-details">
-              <div>
-                <span class="contact-row-label">Address</span>
-                <span class="contact-row-value">{firm.address}</span>
-              </div>
-              <div>
-                <span class="contact-row-label">Phone</span>
-                <span class="contact-row-value">{firm.phone}</span>
-              </div>
-              <div>
-                <span class="contact-row-label">Email</span>
-                <span class="contact-row-value">{firm.email}</span>
-              </div>
-              <div>
-                <span class="contact-row-label">Website</span>
-                <span class="contact-row-value">{firm.website}</span>
-              </div>
-            </div>
-
-            <p style="font-size: 0.8rem; color: var(--muted); font-style: italic; margin-top: 0.5rem;">
-              All discussions held in strict confidence.
-            </p>
-          </div>
-
-          <form class="contact-form" action="#" method="POST">
-            <h3 class="form-title">Ready when you are.</h3>
-
-            <div class="form-row-2">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-              </div>
-              <div class="form-group">
-                <label for="org">Organisation</label>
-                <input type="text" id="org" name="org" placeholder="Your company" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required />
-            </div>
-
-            <div class="form-group">
-              <label for="service">Nature of Enquiry</label>
-              <select id="service" name="service">
-                <option value="">Select a service area</option>
-                <option>General Enquiry</option>
-                <option>Corporate Finance & M&A</option>
-                <option>Strategy & Corporate Advisory</option>
-                <option>Government & Public Sector</option>
-                <option>Investment & Strategic Assets</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Enter brief Description</label>
-              <textarea id="message" name="message" placeholder="Please describe your situation briefly. All information shared is strictly confidential."></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">
-              Submit Enquiry
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-
-            <p class="form-note">
-              Your enquiry is treated with strict confidentiality.<br/>
-              We respond to all submissions within one business day.
-            </p>
-          </form>
+        <div class="contact-hero-card">
+          <h3 class="contact-card-title">Ready when you are.</h3>
+          <p class="contact-card-body">Contact us for an initial, confidential discussion and we'll take it from there.</p>
+          <div class="contact-card-rule"></div>
+          <p class="contact-card-note">All discussions held in strict confidence.</p>
         </div>
       </div>
     </section>
