@@ -502,9 +502,10 @@ const differentiators = [
     .hero-left {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      align-items: flex-start;
-      text-align: left;
+      gap: 0.25rem;
+      align-items: center;
+      text-align: center;
+      margin-left: -20%;
     }
 
     .gradient{
@@ -549,6 +550,12 @@ const differentiators = [
       display: block;
       font-weight: 400;
     }
+    .hero-h1-logo img {
+      display: block;
+      width: min(640px, 100%);
+      height: auto;
+      filter: drop-shadow(0 4px 28px rgba(0,0,0,0.35));
+    }
 
     .hero-tagline {
       display: block;
@@ -557,7 +564,7 @@ const differentiators = [
       font-style: italic;
       font-weight: 400;
       color: rgba(255,255,255,0.75);
-      margin-top: 1.5rem;
+      margin-top: 0;
       letter-spacing: 0.01em;
     }
 
@@ -1484,8 +1491,10 @@ const differentiators = [
     }
 
     @media (max-width: 960px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 4rem 3rem; }
-      .hero-left { gap: 1.5rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 4rem 3rem; justify-items: center; }
+      .hero-left { gap: 1.5rem; align-items: center; text-align: center; margin-left: 0; }
+      .hero-h1-logo img { width: min(420px, 85%); margin-inline: auto; }
+      .hero-action { justify-content: center; }
       .hero-right { gap: 1.5rem; }
       .hero-desc { max-width: 100%; }
       .hero-bg::before { right: 0; }
@@ -1685,9 +1694,8 @@ const differentiators = [
 
       <div class="wrap hero-inner">
         <div class="hero-left">
-          <h1 class="hero-h1 hw hw-1">
-            <span>Flowstate</span>
-            <em>Advisors</em>
+          <h1 class="hero-h1 hero-h1-logo hw hw-1">
+            <img src={logoWhite.src} alt="Flowstate Advisors" />
           </h1>
           <p class="hero-tagline hw hw-1">{firm.quote}</p>
           <div class="hero-action hw hw-2">
