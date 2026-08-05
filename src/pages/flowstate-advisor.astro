@@ -156,6 +156,13 @@ const differentiators = [
     body: "Taking a front role in driving execution including deals vs the typical back-engine support.",
   },
 ];
+
+const chairman = {
+  name: "Khairy Jamaluddin",
+  title: "Executive Chairman",
+  message: "Malaysia has no shortage of potential, but too much of its best talent has been drawn to neighbouring markets and more advanced economies in search of greater opportunities. At the same time, capable local firms often lack access to the country's most significant mandates, which continue to default to established global brands.\n\nFlowstate exists to help change that. We believe Malaysian talent and local capability should be given the opportunity to compete on merit, supported by equal access and held to the same standards of accountability. By combining deep local insight with rigorous execution and international standards, we aim to create meaningful opportunities for Malaysia's best minds and ensure that more of the nation's most consequential work is delivered at home.",
+  photo: "/src/assets/KJ.png",
+};
 ---
 
 <!DOCTYPE html>
@@ -659,6 +666,104 @@ const differentiators = [
     @keyframes scrollPulse {
       0%, 100% { opacity: 0.4; transform: scaleY(1); }
       50% { opacity: 1; transform: scaleY(0.7); }
+    }
+
+    /* ─── SECTION 1.5 — CHAIRMAN MESSAGE (Split Layout) ───────────────── */
+    .chairman-hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .chairman-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .chairman-frame {
+      border: 2px solid var(--accent);
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      width: 100%;
+      max-width: 320px;
+      backdrop-filter: blur(4px);
+    }
+
+    .chairman-photo {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .chairman-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--ink-900);
+      line-height: 1.1;
+      margin: 0;
+      text-align: center;
+    }
+
+    .chairman-position {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .chairman-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .chairman-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink-900);
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .chairman-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin: 0 0 1rem 0;
+    }
+
+    .chairman-content {
+      font-size: 1rem;
+      color: var(--ink-700);
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .chairman-content p {
+      margin: 0 0 1.25rem 0;
+    }
+
+    .chairman-content p:last-child {
+      margin-bottom: 0;
     }
 
     /* ─── SECTION 2 — ABOUT ──────────────────────────────────────────── */
@@ -1505,6 +1610,9 @@ const differentiators = [
       .hero-right { gap: 1.5rem; }
       .hero-desc { max-width: 100%; }
       .hero-bg::before { right: 0; }
+      .chairman-hero { grid-template-columns: 1fr; gap: 2.5rem; }
+      .chairman-left { align-items: center; }
+      .chairman-frame { max-width: 100%; }
       .about-header { grid-template-columns: 1fr; gap: 1.5rem; }
       .pillar-grid { grid-template-columns: 1fr 1fr; }
       .purpose-row { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -1531,6 +1639,13 @@ const differentiators = [
     @media (max-width: 680px) {
       .pillar-grid { grid-template-columns: 1fr; }
       .industry-grid { grid-template-columns: 1fr; }
+      .chairman-frame { padding: 1.5rem; max-width: 280px; }
+      .chairman-photo { border-radius: 4px; }
+      .chairman-name { font-size: clamp(1.25rem, 4vw, 1.75rem); }
+      .chairman-position { font-size: 0.8rem; }
+      .chairman-title { font-size: clamp(1.25rem, 4vw, 1.75rem); }
+      .chairman-subtitle { font-size: 1rem; margin-bottom: 0.75rem; }
+      .chairman-content { font-size: 0.95rem; }
       .process-title { font-size: 32px; }
       .process-step { gap: 1.25rem; }
       .contact-hero-info { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1666,6 +1781,7 @@ const differentiators = [
         </a>
 
         <ul class="nav-links">
+          <li><a href="#chairman">Chairman</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#purpose">Purpose</a></li>
           <li><a href="#target">Target</a></li>
@@ -1681,6 +1797,7 @@ const differentiators = [
       </nav>
 
       <div class="mobile-nav" id="mobileNav">
+        <a href="#chairman">Chairman</a>
         <a href="#about">About</a>
         <a href="#purpose">Purpose</a>
         <a href="#target">Target</a>
@@ -1717,6 +1834,31 @@ const differentiators = [
       <div class="hero-scroll" aria-hidden="true">
         <span class="scroll-label">Scroll</span>
         <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 1.5 — CHAIRMAN MESSAGE (Split Layout) -->
+    <section class="section section--tint" id="chairman">
+      <div class="wrap">
+        <div class="chairman-hero" data-anim="fade-up" style="--anim-delay: 0.4s;">
+          <div class="chairman-left">
+            <div class="chairman-frame">
+              <img src={chairman.photo} alt={chairman.name} class="chairman-photo" />
+              <h2 class="chairman-name">{chairman.name}</h2>
+              <p class="chairman-position">{chairman.title}</p>
+            </div>
+          </div>
+
+          <div class="chairman-right">
+            <h3 class="chairman-title">Chairman's Message</h3>
+            <p class="chairman-subtitle">Leading with Vision</p>
+            <div class="chairman-content">
+              {chairman.message.split('\n\n').map(para => (
+                <p>{para}</p>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1984,6 +2126,7 @@ const differentiators = [
         </div>
 
         <ul class="footer-links">
+          <li><a href="#chairman">Chairman</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#purpose">Purpose</a></li>
           <li><a href="#target">Target</a></li>
